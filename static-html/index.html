@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Quran Reader</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <header class="bg-white shadow">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <h1 class="text-2xl font-bold">Quran Reader</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="index.html" class="text-blue-600 hover:underline">Home</a></li>
+                    <li><a href="read.html" class="text-blue-600 hover:underline">Read Quran</a></li>
+                    <li><a href="login.html" class="text-blue-600 hover:underline">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="container mx-auto px-4 py-8">
+        
+    <h1 class="text-3xl font-bold mb-6">Quran Reader Dashboard</h1>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+        <div class="bg-white rounded-lg shadow p-6">
+            <h2 class="text-xl font-semibold mb-4">Current Khatm</h2>
+            <p>Khatm #<span data-mock="khatm.number">1</span></p>
+            <p>Type: <span data-mock="khatm.type">Full Quran</span></p>
+            <p>Participants: <span data-mock="khatm.participants">15</span></p>
+            <div class="mt-4">
+                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                    <div class="bg-blue-600 h-2.5 rounded-full" style="width: 25%"></div>
+                </div>
+                <p class="text-sm text-gray-600 mt-1"><span data-mock="khatm.progress">25</span>% Completed</p>
+            </div>
+        </div>
+        
+        <div class="bg-white rounded-lg shadow p-6">
+            <h2 class="text-xl font-semibold mb-4">Your Contribution</h2>
+            <p>Sections Completed: <span data-mock="user.completedSections">3</span></p>
+            <p>Your standing: <span data-mock="user.percentile">80th</span> percentile</p>
+            <div class="mt-4">
+                <a href="read.html" class="inline-block bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+                    Continue Reading
+                </a>
+            </div>
+        </div>
+        
+        <div class="bg-white rounded-lg shadow p-6">
+            <h2 class="text-xl font-semibold mb-4">Recent Completions</h2>
+            <ul class="space-y-2">
+                <li>Ali completed Para 5</li>
+                <li>Fatima completed Para 8</li>
+                <li>Ahmed completed Para 12</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="bg-white rounded-lg shadow p-6">
+        <h2 class="text-xl font-semibold mb-4">Start Reading</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4" id="para-buttons">
+            <!-- Para buttons will be dynamically added -->
+        </div>
+    </div>
+
+    </main>
+    
+    <footer class="bg-white shadow-inner mt-auto">
+        <div class="container mx-auto px-4 py-6 text-center text-gray-600">
+            <p>&copy; 2023 Quran Reader. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="app.js"></script>
+</body>
+</html>
+  

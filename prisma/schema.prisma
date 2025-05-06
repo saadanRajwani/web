@@ -1,0 +1,101 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id               String           @id @default(cuid())
+  name             String
+  email            String           @unique
+  password         String
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime         @updatedAt
+  userProgress     UserProgress[]
+  completedSections CompletedSection[]
+  profile          UserProfile?
+  lastLogin        DateTime?
+  failedLoginAttempts Int           @default(0)
+  lockedUntil      DateTime?
+}
+
+model Khatm {
+  id               String           @id @default(cuid())
+  khatmNumber      Int
+  goalType         String           // "day", "week", "month"
+  startDate        DateTime         @default(now())
+  endDate          DateTime
+  totalParticipants Int              @default(0)
+  sectionsCompleted Int              @default(0)
+  totalSections    Int              @default(30)
+  isActive         Boolean          @default(true)
+  completedSections CompletedSection[]
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime         @updatedAt
+}
+
+model QuranSection {
+  id               String           @id @default(cuid())
+  paraNumber       Int
+  rukuNumber       Int?
+  name             String
+  arabicName       String?
+  totalVerses      Int
+  progress         UserProgress[]
+  completedBy      CompletedSection[]
+}
+
+model UserProgress {
+  id               String           @id @default(cuid())
+  userId           String
+  user             User             @relation(fields: [userId], references: [id])
+  sectionId        String
+  section          QuranSection     @relation(fields: [sectionId], references: [id])
+  isCompleted      Boolean          @default(false)
+  completedAt      DateTime?
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime         @updatedAt
+
+  @@unique([userId, sectionId])
+}
+
+model CompletedSection {
+  id               String           @id @default(cuid())
+  userId           String
+  user             User             @relation(fields: [userId], references: [id])
+  sectionId        String
+  section          QuranSection     @relation(fields: [sectionId], references: [id])
+  khatmId          String
+  khatm            Khatm            @relation(fields: [khatmId], references: [id])
+  completedAt      DateTime         @default(now())
+  
+  @@unique([userId, sectionId, khatmId])
+}
+
+model UserProfile {
+  id                 String   @id @default(cuid())
+  userId             String   @unique
+  user               User     @relation(fields: [userId], references: [id])
+  username           String   @unique
+  bio                String?
+  phoneNumber        String?
+  readingStreak      Int      @default(0)
+  khatmsParticipated Int      @default(0)
+  emailNotifications Boolean  @default(true)
+  language           String   @default("English")
+  achievements       String   @default("[]")
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+  lastActive         DateTime @default(now())
+  securityQuestion   String?
+  securityAnswer     String?
+}

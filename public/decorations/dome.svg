@@ -1,0 +1,7 @@
+<svg width="80" height="40" viewBox="0 0 80 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M40 0C17.9086 0 0 17.9086 0 40H80C80 17.9086 62.0914 0 40 0Z" fill="#1E6F5C" opacity="0.2" />
+  <path d="M40 5C20.67 5 5 20.67 5 40H75C75 20.67 59.33 5 40 5Z" stroke="#1E6F5C" stroke-width="1" opacity="0.5" />
+  <path d="M40 40V10" stroke="#1E6F5C" stroke-width="1" opacity="0.5" />
+  <circle cx="40" cy="10" r="3" fill="#1E6F5C" opacity="0.5" />
+</svg>
+

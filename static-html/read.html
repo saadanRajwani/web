@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read Quran - Quran Reader</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <header class="bg-white shadow">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <h1 class="text-2xl font-bold">Quran Reader</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="index.html" class="text-blue-600 hover:underline">Home</a></li>
+                    <li><a href="read.html" class="text-blue-600 hover:underline">Read Quran</a></li>
+                    <li><a href="login.html" class="text-blue-600 hover:underline">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="container mx-auto px-4 py-8">
+        
+    <h1 class="text-3xl font-bold mb-6">Select a Para to Read</h1>
+    
+    <div class="bg-white rounded-lg shadow p-6">
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4" id="para-grid">
+            <!-- Para selection buttons will be added dynamically -->
+        </div>
+    </div>
+    
+    <div id="para-content" class="mt-8 bg-white rounded-lg shadow p-6 hidden">
+        <div class="flex items-center justify-between mb-4">
+            <h2 class="text-2xl font-bold" id="para-title">Para 1</h2>
+            <button
+                id="mark-complete-btn"
+                class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
+            >
+                Mark as Completed
+            </button>
+        </div>
+        <div class="border rounded-lg p-6 bg-gray-50">
+            <p class="text-right text-2xl font-arabic leading-loose mb-6">
+                بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+            </p>
+            <p class="text-right text-2xl font-arabic leading-loose">
+                الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ ﴿١﴾ الرَّحْمَٰنِ الرَّحِيمِ ﴿٢﴾ مَالِكِ يَوْمِ الدِّينِ ﴿٣﴾ إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ ﴿٤﴾ اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ ﴿٥﴾ صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ ﴿٦﴾
+            </p>
+        </div>
+    </div>
+
+    </main>
+    
+    <footer class="bg-white shadow-inner mt-auto">
+        <div class="container mx-auto px-4 py-6 text-center text-gray-600">
+            <p>&copy; 2023 Quran Reader. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="app.js"></script>
+</body>
+</html>
+  

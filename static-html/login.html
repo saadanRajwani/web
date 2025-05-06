@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Quran Reader</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <header class="bg-white shadow">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <h1 class="text-2xl font-bold">Quran Reader</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="index.html" class="text-blue-600 hover:underline">Home</a></li>
+                    <li><a href="read.html" class="text-blue-600 hover:underline">Read Quran</a></li>
+                    <li><a href="login.html" class="text-blue-600 hover:underline">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="container mx-auto px-4 py-8">
+        
+    <div class="w-full max-w-md mx-auto bg-white rounded-lg shadow p-8">
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-bold">Sign In</h1>
+            <p class="text-gray-600 mt-2">Welcome to Quran Reader</p>
+        </div>
+        
+        <div id="login-error" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4 hidden">
+            Invalid email or password
+        </div>
+        
+        <form id="login-form">
+            <div class="mb-4">
+                <label class="block text-gray-700 font-medium mb-2" for="email">
+                    Email
+                </label>
+                <input
+                    id="email"
+                    type="email"
+                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="your@email.com"
+                />
+            </div>
+            
+            <div class="mb-6">
+                <label class="block text-gray-700 font-medium mb-2" for="password">
+                    Password
+                </label>
+                <input
+                    id="password"
+                    type="password"
+                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="••••••••"
+                />
+                <p class="text-sm text-gray-600 mt-1">
+                    <a href="#" class="text-blue-600 hover:underline">
+                        Forgot password?
+                    </a>
+                </p>
+            </div>
+            
+            <button
+                type="submit"
+                class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            >
+                Sign In
+            </button>
+        </form>
+        
+        <div class="mt-6 text-center">
+            <p class="text-gray-600">
+                Don't have an account?
+                <a href="#" class="text-blue-600 hover:underline">
+                    Sign Up
+                </a>
+            </p>
+        </div>
+    </div>
+    
+    <div class="mt-8 text-center text-sm text-gray-500">
+        <p>For demo, use: user@example.com / password</p>
+    </div>
+
+    </main>
+    
+    <footer class="bg-white shadow-inner mt-auto">
+        <div class="container mx-auto px-4 py-6 text-center text-gray-600">
+            <p>&copy; 2023 Quran Reader. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="app.js"></script>
+</body>
+</html>
+  

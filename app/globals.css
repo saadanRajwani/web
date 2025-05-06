@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 30% 96%;
+    --foreground: 170 50% 15%;
+
+    --card: 40 30% 98%;
+    --card-foreground: 170 50% 15%;
+
+    --popover: 40 30% 98%;
+    --popover-foreground: 170 50% 15%;
+
+    --primary: 160 58% 28%;
+    --primary-foreground: 40 30% 98%;
+
+    --secondary: 160 58% 38%;
+    --secondary-foreground: 40 30% 98%;
+
+    --muted: 40 20% 92%;
+    --muted-foreground: 170 30% 30%;
+
+    --accent: 160 58% 45%;
+    --accent-foreground: 40 30% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 40 30% 98%;
+
+    --border: 170 20% 85%;
+    --input: 170 20% 85%;
+    --ring: 160 58% 28%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 170 50% 8%;
+    --foreground: 40 30% 98%;
+
+    --card: 170 50% 10%;
+    --card-foreground: 40 30% 98%;
+
+    --popover: 170 50% 10%;
+    --popover-foreground: 40 30% 98%;
+
+    --primary: 160 58% 45%;
+    --primary-foreground: 170 50% 8%;
+
+    --secondary: 160 58% 35%;
+    --secondary-foreground: 40 30% 98%;
+
+    --muted: 170 50% 15%;
+    --muted-foreground: 40 20% 80%;
+
+    --accent: 160 58% 28%;
+    --accent-foreground: 40 30% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 40 30% 98%;
+
+    --border: 170 50% 20%;
+    --input: 170 50% 20%;
+    --ring: 160 58% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Islamic decorative elements */
+.islamic-border {
+  @apply relative;
+}
+
+.islamic-border::before,
+.islamic-border::after {
+  content: "";
+  @apply absolute left-1/2 w-16 h-4 -translate-x-1/2 bg-contain bg-no-repeat bg-center;
+}
+
+.islamic-border::before {
+  @apply -top-2;
+  background-image: url("/decorations/border-top.svg");
+}
+
+.islamic-border::after {
+  @apply -bottom-2;
+  background-image: url("/decorations/border-bottom.svg");
+}
+
+/* Animations */
+.animate-enter {
+  @apply opacity-0;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.animate-enter-delay-1 {
+  animation-delay: 0.1s;
+}
+
+.animate-enter-delay-2 {
+  animation-delay: 0.2s;
+}
+
+.animate-enter-delay-3 {
+  animation-delay: 0.3s;
+}
+
+/* Quran text styling */
+.quran-arabic {
+  @apply font-serif text-right leading-loose;
+  font-family: "Scheherazade New", serif;
+}
+
+.quran-translation {
+  @apply text-muted-foreground italic;
+}
+
+/* Prayer times indicator */
+.prayer-time-indicator {
+  @apply relative overflow-hidden rounded-md;
+}
+
+.prayer-time-indicator::before {
+  @apply absolute inset-0 -translate-x-full;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  content: "";
+  animation: shimmer 2s infinite;
+}
+
+/* Decorative elements */
+.dome-decoration {
+  @apply relative;
+}
+
+.dome-decoration::before {
+  content: "";
+  @apply absolute top-0 left-1/2 w-20 h-10 -translate-x-1/2 -translate-y-1/2 bg-contain bg-no-repeat bg-center;
+  background-image: url("/decorations/dome.svg");
+}
+
